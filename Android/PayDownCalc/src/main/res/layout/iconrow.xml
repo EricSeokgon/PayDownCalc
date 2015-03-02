@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_gravity="left"
+
+    android:padding="6dip">
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="10px"
+        android:layout_marginLeft="10px"
+        android:src="@drawable/dollar_black" />
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="40px"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_marginRight="10px"
+        android:layout_marginLeft="10px"
+
+
+        />
+    <TextView
+        android:id="@+id/value"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_marginRight="10px"
+        android:layout_marginLeft="10px"
+        android:layout_gravity="left"
+        android:text=""
+
+        />
+    <TextView
+        android:id="@+id/typetext"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:layout_marginRight="10px"
+        android:layout_marginLeft="10px"
+        android:layout_gravity="left"
+        android:text=""
+        />
+    <TextView
+        android:id="@+id/monthtext"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:layout_marginRight="10px"
+        android:layout_marginLeft="10px"
+        android:text=""
+        android:layout_gravity="left"
+        />
+    <TextView
+        android:id="@+id/yeartext"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:layout_marginRight="10px"
+        android:layout_marginLeft="10px"
+        android:text=""
+        />
+</LinearLayout>

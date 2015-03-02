@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Pay Down Calc - Mortgage Charting and Amortization</title>
+        <meta property="og:image" content="http://paydowncalc.com/images/paydowncalclogo64x64.png"/>
+        <meta name="GENERATOR" content="Pay Down Calculator">
+        <meta name="description" content="Pay Down Calc provides charts, extra payments, and amortization in an easy format to help you with your home loan.">
+        <meta name="keywords" content="mortgage, amortization, pay down, calculator, paydowncalc, home loan, calculation">
+        <meta name="owner" content="Dan Nagle">
+        <meta name="robots" content="all">
+        <meta name="copyright" content="Dan Nagle">
+  
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/start/jquery-ui.css" />
+        <link href="css/realworldmtg.css?v=1425260209" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> 
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+		var barChart = []; 
+                var lineChart = {};
+                
+        </script>
+                <script src="js/jquery.cookie.js"></script>        
+	<script src="js/jquery.formatCurrency-1.4.0.min.js"></script>
+	<script src="js/mustache.js"></script>
+	<script src="js/templates.js"></script>
+        <script src="js/googlecharts.js?v=1425260209"></script>
+        <script src="js/app.js?v=1425267066"></script>
+                
+        
+        
+</head>
+<body>
+<div id="doublewrap" class="ui-corner-all">
+         <div id="header" class="ui-dialog-titlebar ui-widget-header 
+         ui-helper-clearfix">
+<a href='/'>Pay Down Calc</a> | Mortgage Charting and Amortization 
+                <a id='androidapp' href="https://play.google.com/store/apps/details?id=com.paydowncalc.app" style="float:right;" class="ui-state-default ui-corner-all" title="Android App">
+                    <img alt="Android Robot" src="androidicon24.png"></a>
+</div>
+    
+<div id="prepaymentadjust" class="ui-widget ui-corner-bottom ui-helper-hidden">
+    <table id="extrapaymenttableformadjust" cellpadding="5" cellspacing="0" 
+           style="font-size:12px;width:500px;">
+        <tr>
+                    <td style = 'width:200px;' >
+                        <select autocomplete="off"  name="month" id="prepaymonthadjust" >
+                        <option value='January' class=' option'>January</option><option value='February' class=' option'>February</option><option value='March' class=' option' selected='selected' >March</option><option value='April' class=' option'>April</option><option value='May' class=' option'>May</option><option value='June' class=' option'>June</option><option value='July' class=' option'>July</option><option value='August' class=' option'>August</option><option value='September' class=' option'>September</option><option value='October' class=' option'>October</option><option value='November' class=' option'>November</option><option value='December' class=' option'>December</option>                        </select>
+
+                        <select autocomplete="off"  name="year" id="prepayyearadjust" >
+                        <option value='2014' class=' option' >2014</option><option value='2015' class=' option'  selected='selected' >2015</option><option value='2016' class=' option' >2016</option><option value='2017' class=' option' >2017</option><option value='2018' class=' option' >2018</option><option value='2019' class=' option' >2019</option><option value='2020' class=' option' >2020</option><option value='2021' class=' option' >2021</option><option value='2022' class=' option' >2022</option><option value='2023' class=' option' >2023</option><option value='2024' class=' option' >2024</option><option value='2025' class=' option' >2025</option><option value='2026' class=' option' >2026</option><option value='2027' class=' option' >2027</option><option value='2028' class=' option' >2028</option><option value='2029' class=' option' >2029</option><option value='2030' class=' option' >2030</option><option value='2031' class=' option' >2031</option><option value='2032' class=' option' >2032</option><option value='2033' class=' option' >2033</option><option value='2034' class=' option' >2034</option><option value='2035' class=' option' >2035</option><option value='2036' class=' option' >2036</option><option value='2037' class=' option' >2037</option><option value='2038' class=' option' >2038</option><option value='2039' class=' option' >2039</option><option value='2040' class=' option' >2040</option><option value='2041' class=' option' >2041</option><option value='2042' class=' option' >2042</option><option value='2043' class=' option' >2043</option><option value='2044' class=' option' >2044</option><option value='2045' class=' option' >2045</option><option value='2046' class=' option' >2046</option><option value='2047' class=' option' >2047</option><option value='2048' class=' option' >2048</option><option value='2049' class=' option' >2049</option><option value='2050' class=' option' >2050</option><option value='2051' class=' option' >2051</option><option value='2052' class=' option' >2052</option><option value='2053' class=' option' >2053</option><option value='2054' class=' option' >2054</option><option value='2055' class=' option' >2055</option><option value='2056' class=' option' >2056</option><option value='2057' class=' option' >2057</option><option value='2058' class=' option' >2058</option><option value='2059' class=' option' >2059</option><option value='2060' class=' option' >2060</option><option value='2061' class=' option' >2061</option><option value='2062' class=' option' >2062</option><option value='2063' class=' option' >2063</option><option value='2064' class=' option' >2064</option><option value='2065' class=' option' >2065</option><option value='2066' class=' option' >2066</option><option value='2067' class=' option' >2067</option><option value='2068' class=' option' >2068</option><option value='2069' class=' option' >2069</option><option value='2070' class=' option' >2070</option><option value='2071' class=' option' >2071</option><option value='2072' class=' option' >2072</option><option value='2073' class=' option' >2073</option><option value='2074' class=' option' >2074</option><option value='2075' class=' option' >2075</option><option value='2076' class=' option' >2076</option><option value='2077' class=' option' >2077</option><option value='2078' class=' option' >2078</option><option value='2079' class=' option' >2079</option><option value='2080' class=' option' >2080</option><option value='2081' class=' option' >2081</option><option value='2082' class=' option' >2082</option><option value='2083' class=' option' >2083</option><option value='2084' class=' option' >2084</option><option value='2085' class=' option' >2085</option><option value='2086' class=' option' >2086</option><option value='2087' class=' option' >2087</option><option value='2088' class=' option' >2088</option><option value='2089' class=' option' >2089</option><option value='2090' class=' option' >2090</option><option value='2091' class=' option' >2091</option><option value='2092' class=' option' >2092</option><option value='2093' class=' option' >2093</option><option value='2094' class=' option' >2094</option><option value='2095' class=' option' >2095</option><option value='2096' class=' option' >2096</option><option value='2097' class=' option' >2097</option><option value='2098' class=' option' >2098</option><option value='2099' class=' option' >2099</option>                        </select>
+                    </td>
+                    <td>
+                            <select autocomplete="off"    name="prepaymenttype" id="prepaymenttypeadjust" style="width: 100px;" size="1" >
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Annual">Annual</option>
+                                    <option value="One-time">One-time</option>
+                                    <option value="Refinance">Refinance</option>
+                            </select>
+                    </td>
+
+                    <td><input autocomplete="off" value="$100.00"  class="currency" name="prepayamountadjust" id="prepayamountadjust" type="text" >
+                        <div id="divrefiadjust" class="ui-helper-hidden" >
+                            <input value="4.00%" style="width: 40px;"  class="percent" 
+                                   name="refipercentadjust" id="refipercentadjust" type="text"     onblur="$(this).removeClass('inputhighlight');" onfocus="$(this).addClass('inputhighlight');"
+     >
+                    <select style="width: 80px;" autocomplete="off" class="year" 
+                                name="yearrefiadjust" id="yearrefiadjust" >
+                    <option value='2' class='submitnow option' >2 Years</option><option value='3' class='submitnow option' >3 Years</option><option value='4' class='submitnow option' >4 Years</option><option value='5' class='submitnow option' >5 Years</option><option value='6' class='submitnow option' >6 Years</option><option value='7' class='submitnow option' >7 Years</option><option value='8' class='submitnow option' >8 Years</option><option value='9' class='submitnow option' >9 Years</option><option value='10' class='submitnow option' >10 Years</option><option value='11' class='submitnow option' >11 Years</option><option value='12' class='submitnow option' >12 Years</option><option value='13' class='submitnow option' >13 Years</option><option value='14' class='submitnow option' >14 Years</option><option value='15' class='submitnow option' >15 Years</option><option value='16' class='submitnow option' >16 Years</option><option value='17' class='submitnow option' >17 Years</option><option value='18' class='submitnow option' >18 Years</option><option value='19' class='submitnow option' >19 Years</option><option value='20' class='submitnow option' >20 Years</option><option value='21' class='submitnow option' >21 Years</option><option value='22' class='submitnow option' >22 Years</option><option value='23' class='submitnow option' >23 Years</option><option value='24' class='submitnow option' >24 Years</option><option value='25' class='submitnow option' >25 Years</option><option value='26' class='submitnow option' >26 Years</option><option value='27' class='submitnow option' >27 Years</option><option value='28' class='submitnow option' >28 Years</option><option value='29' class='submitnow option' >29 Years</option><option value='30' class='submitnow option'  selected='selected' >30 Years</option><option value='31' class='submitnow option' >31 Years</option><option value='32' class='submitnow option' >32 Years</option><option value='33' class='submitnow option' >33 Years</option><option value='34' class='submitnow option' >34 Years</option><option value='35' class='submitnow option' >35 Years</option><option value='36' class='submitnow option' >36 Years</option><option value='37' class='submitnow option' >37 Years</option><option value='38' class='submitnow option' >38 Years</option><option value='39' class='submitnow option' >39 Years</option><option value='40' class='submitnow option' >40 Years</option><option value='41' class='submitnow option' >41 Years</option><option value='42' class='submitnow option' >42 Years</option><option value='43' class='submitnow option' >43 Years</option><option value='44' class='submitnow option' >44 Years</option><option value='45' class='submitnow option' >45 Years</option><option value='46' class='submitnow option' >46 Years</option><option value='47' class='submitnow option' >47 Years</option><option value='48' class='submitnow option' >48 Years</option><option value='49' class='submitnow option' >49 Years</option>                    </select></div>
+
+                    
+                    </td>
+                   
+            </tr>
+    </table>
+
+</div>
+
+<div id="wrap" class="ui-corner-bottom">
+    
+<table id="roottable">
+    <tr valign="top">
+        <td>
+            
+
+<table cellpadding="5" cellspacing="0" >
+		<tbody>
+			<tr  >
+				<td>Loan Start Date:</td>
+				<td style="width:180px;">
+<select autocomplete="off"  name="month" class="submitnow" id="originalstartmonth" >
+<option value='January' class='submitnow option'>January</option><option value='February' class='submitnow option'>February</option><option value='March' class='submitnow option' selected='selected' >March</option><option value='April' class='submitnow option'>April</option><option value='May' class='submitnow option'>May</option><option value='June' class='submitnow option'>June</option><option value='July' class='submitnow option'>July</option><option value='August' class='submitnow option'>August</option><option value='September' class='submitnow option'>September</option><option value='October' class='submitnow option'>October</option><option value='November' class='submitnow option'>November</option><option value='December' class='submitnow option'>December</option></select>
+
+<select autocomplete="off"  name="year" class="submitnow" id="originalstartyear" >
+<option value='1980' class='submitnow option' >1980</option><option value='1981' class='submitnow option' >1981</option><option value='1982' class='submitnow option' >1982</option><option value='1983' class='submitnow option' >1983</option><option value='1984' class='submitnow option' >1984</option><option value='1985' class='submitnow option' >1985</option><option value='1986' class='submitnow option' >1986</option><option value='1987' class='submitnow option' >1987</option><option value='1988' class='submitnow option' >1988</option><option value='1989' class='submitnow option' >1989</option><option value='1990' class='submitnow option' >1990</option><option value='1991' class='submitnow option' >1991</option><option value='1992' class='submitnow option' >1992</option><option value='1993' class='submitnow option' >1993</option><option value='1994' class='submitnow option' >1994</option><option value='1995' class='submitnow option' >1995</option><option value='1996' class='submitnow option' >1996</option><option value='1997' class='submitnow option' >1997</option><option value='1998' class='submitnow option' >1998</option><option value='1999' class='submitnow option' >1999</option><option value='2000' class='submitnow option' >2000</option><option value='2001' class='submitnow option' >2001</option><option value='2002' class='submitnow option' >2002</option><option value='2003' class='submitnow option' >2003</option><option value='2004' class='submitnow option' >2004</option><option value='2005' class='submitnow option' >2005</option><option value='2006' class='submitnow option' >2006</option><option value='2007' class='submitnow option' >2007</option><option value='2008' class='submitnow option' >2008</option><option value='2009' class='submitnow option' >2009</option><option value='2010' class='submitnow option' >2010</option><option value='2011' class='submitnow option' >2011</option><option value='2012' class='submitnow option' >2012</option><option value='2013' class='submitnow option' >2013</option><option value='2014' class='submitnow option' >2014</option><option value='2015' class='submitnow option'  selected='selected' >2015</option><option value='2016' class='submitnow option' >2016</option><option value='2017' class='submitnow option' >2017</option><option value='2018' class='submitnow option' >2018</option><option value='2019' class='submitnow option' >2019</option><option value='2020' class='submitnow option' >2020</option><option value='2021' class='submitnow option' >2021</option><option value='2022' class='submitnow option' >2022</option><option value='2023' class='submitnow option' >2023</option><option value='2024' class='submitnow option' >2024</option><option value='2025' class='submitnow option' >2025</option><option value='2026' class='submitnow option' >2026</option><option value='2027' class='submitnow option' >2027</option><option value='2028' class='submitnow option' >2028</option><option value='2029' class='submitnow option' >2029</option><option value='2030' class='submitnow option' >2030</option><option value='2031' class='submitnow option' >2031</option><option value='2032' class='submitnow option' >2032</option><option value='2033' class='submitnow option' >2033</option><option value='2034' class='submitnow option' >2034</option><option value='2035' class='submitnow option' >2035</option><option value='2036' class='submitnow option' >2036</option><option value='2037' class='submitnow option' >2037</option><option value='2038' class='submitnow option' >2038</option><option value='2039' class='submitnow option' >2039</option><option value='2040' class='submitnow option' >2040</option><option value='2041' class='submitnow option' >2041</option><option value='2042' class='submitnow option' >2042</option><option value='2043' class='submitnow option' >2043</option><option value='2044' class='submitnow option' >2044</option><option value='2045' class='submitnow option' >2045</option><option value='2046' class='submitnow option' >2046</option><option value='2047' class='submitnow option' >2047</option><option value='2048' class='submitnow option' >2048</option><option value='2049' class='submitnow option' >2049</option><option value='2050' class='submitnow option' >2050</option><option value='2051' class='submitnow option' >2051</option><option value='2052' class='submitnow option' >2052</option><option value='2053' class='submitnow option' >2053</option><option value='2054' class='submitnow option' >2054</option><option value='2055' class='submitnow option' >2055</option><option value='2056' class='submitnow option' >2056</option><option value='2057' class='submitnow option' >2057</option><option value='2058' class='submitnow option' >2058</option><option value='2059' class='submitnow option' >2059</option><option value='2060' class='submitnow option' >2060</option><option value='2061' class='submitnow option' >2061</option><option value='2062' class='submitnow option' >2062</option><option value='2063' class='submitnow option' >2063</option><option value='2064' class='submitnow option' >2064</option><option value='2065' class='submitnow option' >2065</option><option value='2066' class='submitnow option' >2066</option><option value='2067' class='submitnow option' >2067</option><option value='2068' class='submitnow option' >2068</option><option value='2069' class='submitnow option' >2069</option><option value='2070' class='submitnow option' >2070</option><option value='2071' class='submitnow option' >2071</option><option value='2072' class='submitnow option' >2072</option><option value='2073' class='submitnow option' >2073</option><option value='2074' class='submitnow option' >2074</option><option value='2075' class='submitnow option' >2075</option><option value='2076' class='submitnow option' >2076</option><option value='2077' class='submitnow option' >2077</option><option value='2078' class='submitnow option' >2078</option><option value='2079' class='submitnow option' >2079</option><option value='2080' class='submitnow option' >2080</option><option value='2081' class='submitnow option' >2081</option><option value='2082' class='submitnow option' >2082</option><option value='2083' class='submitnow option' >2083</option><option value='2084' class='submitnow option' >2084</option><option value='2085' class='submitnow option' >2085</option><option value='2086' class='submitnow option' >2086</option><option value='2087' class='submitnow option' >2087</option><option value='2088' class='submitnow option' >2088</option><option value='2089' class='submitnow option' >2089</option><option value='2090' class='submitnow option' >2090</option><option value='2091' class='submitnow option' >2091</option><option value='2092' class='submitnow option' >2092</option><option value='2093' class='submitnow option' >2093</option><option value='2094' class='submitnow option' >2094</option><option value='2095' class='submitnow option' >2095</option><option value='2096' class='submitnow option' >2096</option><option value='2097' class='submitnow option' >2097</option><option value='2098' class='submitnow option' >2098</option><option value='2099' class='submitnow option' >2099</option></select>
+
+				</td>
+			</tr>
+			<tr  >
+				<td>Original Loan Amount: </td>
+				<td><input autocomplete="off"     class="submitnow currency"  value="$100,000.00" name="originalloanamount" id="originalloanamount" maxlength="25" style="width: 100px;" type="text"     onblur="$(this).removeClass('inputhighlight');" onfocus="$(this).addClass('inputhighlight');"
+      ></td>
+			</tr>
+			<tr  >
+				<td>Amount Currently Owed: </td>
+				<td><input autocomplete="off"     class="submitnow currency" value="$100,000.00" name="currentlyowed" id="currentlyowed" maxlength="25" style="width: 100px;" type="text"     onblur="$(this).removeClass('inputhighlight');" onfocus="$(this).addClass('inputhighlight');"
+      ></td>
+			</tr>
+
+			<tr  >
+				<td>Loan Interest rate: </td>
+				<td><input autocomplete="off"     class="submitnow" name="interestrate" id="interestrate" maxlength="10" style="width: 100px;" value="4.25%" type="text"  ></td>
+			</tr>
+			<tr  >
+				<td>Loan Length: </td>
+				<td>
+					<select autocomplete="off"  class="submitnow"  id="loanlength" name="loanlength">
+                                        <option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option><option value='17'>17</option><option value='18'>18</option><option value='19'>19</option><option value='20'>20</option><option value='21'>21</option><option value='22'>22</option><option value='23'>23</option><option value='24'>24</option><option value='25'>25</option><option value='26'>26</option><option value='27'>27</option><option value='28'>28</option><option value='29'>29</option><option value='30' selected='selected' >30</option><option value='31'>31</option><option value='32'>32</option><option value='33'>33</option><option value='34'>34</option><option value='35'>35</option><option value='36'>36</option><option value='37'>37</option><option value='38'>38</option><option value='39'>39</option><option value='40'>40</option><option value='41'>41</option><option value='42'>42</option><option value='43'>43</option><option value='44'>44</option><option value='45'>45</option><option value='46'>46</option><option value='47'>47</option><option value='48'>48</option><option value='49'>49</option><option value='50'>50</option>                                        </select> Years
+				</td>
+			</tr>
+
+			<tr>
+                            <td><small><center><a  href="#" id="showadvanced">Show Advanced</a></center></small></td>
+                            <td></td>
+                        </tr>
+			<tr class="advanced ui-helper-hidden" >
+                            <td>PMI</td>
+                            <td><input autocomplete="off" type="checkbox" id="pmicheck" name="pmicheck">Estimate PMI</td>
+			</tr>
+			<tr class="advanced ui-helper-hidden" >
+                            <td>Refi Fee</td>
+                            <td><input id="refifee" name="refifee" autocomplete="off" style="width: 100px;" maxlength="25"    class="submitnow currency"  value="$2,000.00"     onblur="$(this).removeClass('inputhighlight');" onfocus="$(this).addClass('inputhighlight');"
+      >
+                            </td>                            </td>
+			</tr>
+
+			<tr >
+				<td style="text-align:right;"></td>
+				<td>
+					<button id="docalculate" name="docalculate" class="ui-button-text" type="submit">Calculate</button>
+				<!-- input id="liveupdating" type="checkbox" > Live --> 
+				</td>
+			</tr>				
+	
+                        
+		</tbody>
+		</table>
+
+            
+            
+        </td>
+        <td>
+            
+            <i><small><b>Ad:</b> Holy Smokes! I wrote an <a target="_blank" 
+                href="http://www.amazon.com/gp/product/1466594004/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1466594004&linkCode=as2&tag=dannag-20&linkId=SFTJ5WLMG3W2QIOO">HTML5 Game Dev Book</a>!</small></i><br><br>
+            <fieldset class="ui-widget ui-widget-content ui-corner-all">
+            <legend class="ui-widget ui-widget-header ui-corner-all">Extra Payments / Refinance</legend>
+            <table id="extrapaymenttableform" cellpadding="5" cellspacing="0" style="font-size:10px;width:500px;">
+            <tr>
+                <td  style="width:150px;">
+
+                    <select  autocomplete="off" name="month" id="extrapaymentmonth" >
+                    <option value='January' >January</option><option value='February' >February</option><option value='March'  selected='selected' >March</option><option value='April' >April</option><option value='May' >May</option><option value='June' >June</option><option value='July' >July</option><option value='August' >August</option><option value='September' >September</option><option value='October' >October</option><option value='November' >November</option><option value='December' >December</option>                    </select>
+
+                    <select  autocomplete="off"  name="year" id="extrapaymentyear" >
+                    <option value='2014' class='submitnow option' >2014</option><option value='2015' class='submitnow option'  selected='selected' >2015</option><option value='2016' class='submitnow option' >2016</option><option value='2017' class='submitnow option' >2017</option><option value='2018' class='submitnow option' >2018</option><option value='2019' class='submitnow option' >2019</option><option value='2020' class='submitnow option' >2020</option><option value='2021' class='submitnow option' >2021</option><option value='2022' class='submitnow option' >2022</option><option value='2023' class='submitnow option' >2023</option><option value='2024' class='submitnow option' >2024</option><option value='2025' class='submitnow option' >2025</option><option value='2026' class='submitnow option' >2026</option><option value='2027' class='submitnow option' >2027</option><option value='2028' class='submitnow option' >2028</option><option value='2029' class='submitnow option' >2029</option><option value='2030' class='submitnow option' >2030</option><option value='2031' class='submitnow option' >2031</option><option value='2032' class='submitnow option' >2032</option><option value='2033' class='submitnow option' >2033</option><option value='2034' class='submitnow option' >2034</option><option value='2035' class='submitnow option' >2035</option><option value='2036' class='submitnow option' >2036</option><option value='2037' class='submitnow option' >2037</option><option value='2038' class='submitnow option' >2038</option><option value='2039' class='submitnow option' >2039</option><option value='2040' class='submitnow option' >2040</option><option value='2041' class='submitnow option' >2041</option><option value='2042' class='submitnow option' >2042</option><option value='2043' class='submitnow option' >2043</option><option value='2044' class='submitnow option' >2044</option><option value='2045' class='submitnow option' >2045</option><option value='2046' class='submitnow option' >2046</option><option value='2047' class='submitnow option' >2047</option><option value='2048' class='submitnow option' >2048</option><option value='2049' class='submitnow option' >2049</option><option value='2050' class='submitnow option' >2050</option><option value='2051' class='submitnow option' >2051</option><option value='2052' class='submitnow option' >2052</option><option value='2053' class='submitnow option' >2053</option><option value='2054' class='submitnow option' >2054</option><option value='2055' class='submitnow option' >2055</option><option value='2056' class='submitnow option' >2056</option><option value='2057' class='submitnow option' >2057</option><option value='2058' class='submitnow option' >2058</option><option value='2059' class='submitnow option' >2059</option><option value='2060' class='submitnow option' >2060</option><option value='2061' class='submitnow option' >2061</option><option value='2062' class='submitnow option' >2062</option><option value='2063' class='submitnow option' >2063</option><option value='2064' class='submitnow option' >2064</option><option value='2065' class='submitnow option' >2065</option><option value='2066' class='submitnow option' >2066</option><option value='2067' class='submitnow option' >2067</option><option value='2068' class='submitnow option' >2068</option><option value='2069' class='submitnow option' >2069</option><option value='2070' class='submitnow option' >2070</option><option value='2071' class='submitnow option' >2071</option><option value='2072' class='submitnow option' >2072</option><option value='2073' class='submitnow option' >2073</option><option value='2074' class='submitnow option' >2074</option><option value='2075' class='submitnow option' >2075</option><option value='2076' class='submitnow option' >2076</option><option value='2077' class='submitnow option' >2077</option><option value='2078' class='submitnow option' >2078</option><option value='2079' class='submitnow option' >2079</option><option value='2080' class='submitnow option' >2080</option><option value='2081' class='submitnow option' >2081</option><option value='2082' class='submitnow option' >2082</option><option value='2083' class='submitnow option' >2083</option><option value='2084' class='submitnow option' >2084</option><option value='2085' class='submitnow option' >2085</option><option value='2086' class='submitnow option' >2086</option><option value='2087' class='submitnow option' >2087</option><option value='2088' class='submitnow option' >2088</option><option value='2089' class='submitnow option' >2089</option><option value='2090' class='submitnow option' >2090</option><option value='2091' class='submitnow option' >2091</option><option value='2092' class='submitnow option' >2092</option><option value='2093' class='submitnow option' >2093</option><option value='2094' class='submitnow option' >2094</option><option value='2095' class='submitnow option' >2095</option><option value='2096' class='submitnow option' >2096</option><option value='2097' class='submitnow option' >2097</option><option value='2098' class='submitnow option' >2098</option><option value='2099' class='submitnow option' >2099</option>                    </select>
+                </td>
+
+                <td>
+                        <select  autocomplete="off"    name="prepaymenttype" id="prepaymenttype" style="width: 100px;" size="1" >
+                                <option value="Monthly">Monthly</option>
+                                <option value="Annual">Annual</option>
+                                <option value="One-time">One-time</option>
+                                <option value="Refinance">Refinance</option>
+                        </select>
+                </td>
+
+                <td><input autocomplete="off" value="$100.00"  class="currency" name="prepayamount" id="prepayamount" type="text"     onblur="$(this).removeClass('inputhighlight');" onfocus="$(this).addClass('inputhighlight');"
+      >
+                    <div id="divrefi" class="ui-helper-hidden" ><input value="4.00%" style="width: 40px;"  class="percent" name="refipercent" id="refipercent" type="text"     onblur="$(this).removeClass('inputhighlight');" onfocus="$(this).addClass('inputhighlight');"
+      >
+                    <select style="width: 80px;" autocomplete="off" class="year" name="yearrefi" id="yearrefi" >
+                    <option value='2' class='submitnow option' >2 Years</option><option value='3' class='submitnow option' >3 Years</option><option value='4' class='submitnow option' >4 Years</option><option value='5' class='submitnow option' >5 Years</option><option value='6' class='submitnow option' >6 Years</option><option value='7' class='submitnow option' >7 Years</option><option value='8' class='submitnow option' >8 Years</option><option value='9' class='submitnow option' >9 Years</option><option value='10' class='submitnow option' >10 Years</option><option value='11' class='submitnow option' >11 Years</option><option value='12' class='submitnow option' >12 Years</option><option value='13' class='submitnow option' >13 Years</option><option value='14' class='submitnow option' >14 Years</option><option value='15' class='submitnow option' >15 Years</option><option value='16' class='submitnow option' >16 Years</option><option value='17' class='submitnow option' >17 Years</option><option value='18' class='submitnow option' >18 Years</option><option value='19' class='submitnow option' >19 Years</option><option value='20' class='submitnow option' >20 Years</option><option value='21' class='submitnow option' >21 Years</option><option value='22' class='submitnow option' >22 Years</option><option value='23' class='submitnow option' >23 Years</option><option value='24' class='submitnow option' >24 Years</option><option value='25' class='submitnow option' >25 Years</option><option value='26' class='submitnow option' >26 Years</option><option value='27' class='submitnow option' >27 Years</option><option value='28' class='submitnow option' >28 Years</option><option value='29' class='submitnow option' >29 Years</option><option value='30' class='submitnow option'  selected='selected' >30 Years</option><option value='31' class='submitnow option' >31 Years</option><option value='32' class='submitnow option' >32 Years</option><option value='33' class='submitnow option' >33 Years</option><option value='34' class='submitnow option' >34 Years</option><option value='35' class='submitnow option' >35 Years</option><option value='36' class='submitnow option' >36 Years</option><option value='37' class='submitnow option' >37 Years</option><option value='38' class='submitnow option' >38 Years</option><option value='39' class='submitnow option' >39 Years</option><option value='40' class='submitnow option' >40 Years</option><option value='41' class='submitnow option' >41 Years</option><option value='42' class='submitnow option' >42 Years</option><option value='43' class='submitnow option' >43 Years</option><option value='44' class='submitnow option' >44 Years</option><option value='45' class='submitnow option' >45 Years</option><option value='46' class='submitnow option' >46 Years</option><option value='47' class='submitnow option' >47 Years</option><option value='48' class='submitnow option' >48 Years</option><option value='49' class='submitnow option' >49 Years</option>                    </select></div>
+                </td>
+                
+                <td>
+                        <a href="#" id="addprepayment"
+                        class="fg-button ui-state-default fg-button-icon-solo  ui-corner-all" title="Add">
+                        <span id="addprepaymenticon" class="ui-icon ui-icon-plus"></span> Add</a>
+                </td>
+            </tr>
+            </table>
+
+            <div id="extrapaymentlogger"></div>
+
+            </fieldset>
+            
+            
+        </td>
+    </tr>
+    
+</table>  <!-- //end root table -->
+
+<center> <small >
+        <table style="width:70%">
+            <tr>
+                <td>
+<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?http://paydowncalc.com">Facebook Share</a>                    
+                </td>
+
+                <td>
+<a target="_blank" href="https://plus.google.com/share?url=http://paydowncalc.com">Google+ Share</a>
+                </td>
+
+                <td>
+<a href="https://twitter.com/share?url=http://paydowncalc.com" target="_blank">Tweet This</a>
+                </td>
+            </tr>
+        </table>
+
+                                    
+
+
+
+		</small>		</center>
+
+<fieldset id="resultsfieldset" class="ui-widget ui-widget-content ui-corner-all">
+    <legend class="ui-widget ui-widget-header ui-corner-all" style="text-align: left;">Results</legend>
+<center><div id="spinnerBlock" style="display:none;"></div></center>
+<div id="resultsblock">
+
+    <center>
+        <table style="width:100%;" >
+            <tr valign="top">
+                <td colspan="2">
+                    <div id="summaryID"><center>Click Calculate to see results.</center></div>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td>
+                    <div id="PvIchart_div"></div>
+                </td>
+                <td>
+                    <div id="mtgAmortizeLine"></div>
+                    <!-- div id="chartsID"></div -->
+                </td>
+
+            </tr>
+        </table>
+        
+        
+        <div id="amortizationID"></div>
+    </center>
+
+</div>
+</fieldset>
+<br>
+<div id="copyright">
+Pay Down Calc  is wholly owned and copyright &copy; <a href="http://dannagle.com/">Dan Nagle</a>
+| <a href="http://dannagle.com/contact/" id="contactlink"> Contact</a>&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+</div>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2824772-5', 'paydowncalc.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

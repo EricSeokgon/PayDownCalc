@@ -1,0 +1,165 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    android:background="#e9e9e9"
+    android:layout_span="2"
+    android:id="@+id/resultsTable"
+    >
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+
+        >
+
+
+        <TextView
+            android:id="@+id/backdatewarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#e9e9ff"
+            android:layout_span="2"
+            android:text="Calculation starts with current payment."/>
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal"
+
+        >
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Monthly Payment: "/>
+            <TextView
+                android:id="@+id/monthlyamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$10000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Total Interest "/>
+            <TextView
+                android:id="@+id/totalinterestamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$25000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Total Paid: "/>
+            <TextView
+                android:id="@+id/totalpaidamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$500"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Interest Saved: "/>
+            <TextView
+                android:id="@+id/interestsavedamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$255"
+                android:textStyle="bold"
+                android:textColor="#33773a"
+                />
+        </LinearLayout>
+
+
+    </TableRow>
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Final Payoff: "/>
+            <TextView
+                android:id="@+id/payoffdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jun 2012"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Years Saved: "/>
+            <TextView
+                android:id="@+id/timesavedamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8.5"
+                android:textStyle="bold"
+                android:textColor="#33773a"
+
+                />
+        </LinearLayout>
+
+    </TableRow>
+</TableLayout>
+</merge>

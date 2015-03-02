@@ -1,0 +1,361 @@
+html {
+	font-family: Arial, Helvetica, sans-serif
+}
+.errorblock {
+    width:400px;
+    margin:0 auto;
+
+}
+#doublewrap {
+    width:1075px;
+    margin:0 auto;
+    -webkit-box-shadow: 5px 6px 9px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 6px 9px 1px rgba(0,0,0,0.75);
+    box-shadow: 5px 6px 9px 1px rgba(0,0,0,0.75);
+}
+
+.error {border: 1px solid #ffb73d; background: #d34d17 url(images/ui-bg_diagonals-medium_20_d34d17_40x40.png) 50% 50% repeat; color: #ffffff; }
+
+#accordion
+{
+
+}
+
+.colorSelector {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	background: url(../css/colorpicker/select.png);
+}
+.colorSelector span {
+	position: absolute;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url(../css/colorpicker/select.png) center;
+}
+
+
+.accordianblock
+{
+    text-align:left;
+    font-size:10pt;
+
+}
+.accordianblock table
+{
+    font-size:10pt;
+    text-align:left;
+}
+
+#summaryID, #chartsID, #amortizationID {
+    width:100%;
+}
+
+#wrap
+{
+    width:1075px;
+    margin:0 auto;
+    background-color:  white;    
+}
+
+
+#doublewrap
+{
+    color:#362B36;
+}
+
+
+a
+{
+
+
+color:#383838;
+}
+
+.resizable { width: 150px; height: 150px; padding: 0.5em; }
+.resizable h3 { text-align: center; margin: 0; }
+
+#header {
+    padding:5px 10px;
+    font-size:20px;
+}
+h1 {
+    margin:0;
+}
+#nav {
+    padding:5px 0px 0px 0px;
+    height:30px;
+}
+#nav ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+#nav li {
+    display:inline;
+    margin:0;
+    padding:10px;
+}
+#main,#mainnormal,#mainwide, #maincropper  {
+    float:left;
+    width:788px;
+    height:387px;
+    padding:10px;
+    background-color: #000000;
+}
+
+#mainnormal {
+    background-color: #FFFFF9;
+    height:auto;
+}
+
+#wrapmain {
+	height:520px;
+	float:left;
+}
+
+#maincropper {
+    width:700px;
+    height:400px;
+	
+}
+
+#mainwide {
+    background-color: #fff7dd;
+    width:1055px;
+    height:auto;
+}
+
+.presetbutton {
+    width:70px;
+}
+
+body, html {
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#c7d3dc;
+}
+
+
+h2 {
+    margin:0 0 1em;
+}
+#sidebar {
+    float:right;
+    width:230px;
+    padding-right:5px;
+}
+#footer {
+    clear:both;
+    padding:5px 5px;
+}
+#footer {
+    font-size:12px;
+    margin:0px;
+    
+}
+* html #footer {
+    height:1px;
+}
+
+.search_form
+{
+    float:right;
+}
+
+	.fg-button { outline: 0; margin:0 2px 0 0; padding: 0.2em 0.7em;
+        text-decoration:none !important; cursor:pointer;
+        position: relative; text-align: center;  }
+	.fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+	
+	a.fg-button { float:left; }
+	
+	/* remove extra button width in IE */
+	button.fg-button { width:auto; overflow:visible; }
+	
+	
+	.fg-button-icon-solo { display:block; width:8px; height:20px; width:20px; text-indent: -9999px; }	 
+/* solo icon buttons must have block properties for the text-indent to work */	
+	
+	.fg-buttonset { float:left; }
+	.fg-buttonset .fg-button { float: left; }
+	.fg-buttonset-single .fg-button, 
+	.fg-buttonset-multi .fg-button { margin-right: -1px;}
+	
+	.fg-toolbar { padding: .5em; margin: 0;   }
+	.fg-toolbar .fg-buttonset { margin-right:1.5em; padding-left: 1px; }
+
+
+  #gallery {
+    padding: 30px;
+    background: inherit;
+  }
+  #descriptions {
+    position: relative;
+    height: 50px;
+    background: inherit;
+    margin-top: 10px;
+    padding: 10px;
+    overflow: hidden;
+  }
+#descriptions .ad-image-description {
+    position: absolute;
+}
+  
+#descriptions .ad-image-description .ad-description-title
+{
+    display: block;
+}
+
+#roottable {
+    width:100%;
+}
+
+#resultsfieldset
+{
+        margin-left: 2px;
+        margin-right: 2px;
+        text-align: center;
+}
+
+#copyright {
+    text-align:right;
+    width: 100%;
+    font-size: 10px;
+     
+
+}
+
+.rowhighlighting
+{
+	border: 1px solid #A6C9E2;
+	background: #eef7f7  50% 50% repeat-x;
+	font-weight: normal;
+	font-size: 10px;
+        background: #f4f4f4  50% 50% repeat-x;
+
+
+}
+
+.nonrowhighlighting
+{
+	border: 1px solid #A6C9E2;
+	background: #FDFEFE  50% 50% repeat-x;
+	font-weight: normal;
+	font-size: 10px;
+
+}
+
+#mainnormal,#mainwide {
+    background-color: #FFFFF9;
+}
+
+.inputhighlight
+{
+	background-color:#ffffb9;	
+}
+
+.extramonthly, .extraMonthly, .monthlyextra 
+{
+	background: #d2ffd3  50% 50% repeat-x;
+}
+.extraannual, .extraAnnual, .annualextra
+{
+	background: #fffd9b  50% 50% repeat-x;
+}
+
+.extraone-time, .extraOne-time, .one-timeextra
+{
+	background: #ffceb7  50% 50% repeat-x;
+}
+
+
+.refinanceextra
+{
+	background: #FFD76E  50% 50% repeat-x;
+}
+
+
+
+.helptable
+{
+	width:90%;
+	border-width:0px;
+	padding-left:5px;
+	
+}
+
+.linkcell
+{
+	width:300px;
+	font-size:10pt;
+	border-right:1px solid blue;
+	padding:0px;
+	margin:0px;
+}
+.contentcell
+{
+	padding-left:15px;
+
+}
+
+.textad
+{
+	text-align:left;
+	font-weight:normal;
+	font-size:10pt;
+	display:block;
+	border:1px solid blue;
+	width:200px;
+}
+
+.textadlink
+{
+	color:#004080;
+	font-weight:bold;
+	
+}
+.textadblurb
+{
+	color:#000000;
+	display:block;
+	width:200px;
+}
+
+.textadsponsored
+{
+	text-align:right;
+	color:#006400;
+	font-weight:bold;
+	font-size:8pt;
+	display:block;
+	width:200px;
+}
+
+.firstcanshorten
+{
+	background: #b9ffff  50% 50% repeat-x;
+}
+
+#amortizationtable, #amortizationtable td
+{
+    font-size:10pt;
+    text-align:right;	
+}
+
+		/* Grid
+		----------------------------------*/
+		.ui-grid { padding: .4em;  background-image: none; }
+		.ui-grid .ui-grid-content { width: 100%; border-collapse: collapse; }
+		.ui-grid table tbody td, .ui-grid .ui-grid-header, .ui-grid table thead a { padding: .4em;  }
+		.ui-grid table tbody td {  text-align: right; font-weight: normal;  }
+		.ui-grid .ui-grid-header, .ui-grid .ui-grid-footer { padding: .8em .4em; text-align: center; }
+		.ui-grid .ui-grid-footer { background-image: none; font-weight: normal; text-align: left; }
+		.ui-grid table thead a { display: block;  }
+		.ui-grid .ui-icon { float: right; }
+		.ui-grid .ui-grid-paging { float: right; }
+		.ui-grid .ui-grid-paging-prev { float: left; width: 16px; height: 16px; }
+		.ui-grid .ui-grid-paging-next { float: right; width: 16px; height: 16px; }
+		.ui-grid .ui-grid-results {  }

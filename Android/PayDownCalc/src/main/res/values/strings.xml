@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pay Down Calc</string>
+    <string name="action_save">Save</string>
+    <string name="action_load">Load</string>
+    <string name="action_about">About</string>
+    <string name="action_support">Support</string>
+    <string name="title_section1">Mortgage</string>
+    <string name="title_section2">Extra Payments</string>
+    <!-- <string name="title_section3">Taxes</string> -->
+    <string name="title_section3">Chart</string>
+
+</resources>
