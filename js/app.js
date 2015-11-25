@@ -572,8 +572,7 @@ function amortize(mtg){
     }
     
     var payments = new Array();
-    var runningDate = new Date(mtg['originalstartmonth'] + " 8, " + mtg['originalstartyear'])
-    runningDate.setMonth(runningDate.getMonth()+1);
+    var runningDate = new Date(mtg['originalstartyear'], mtg['originalstartmonth'] + 1, 8, 0, 0, 0, 0);
     if(forwardDate()) {
         runningDate = new Date();
         runningDate.setDate(8);
