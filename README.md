@@ -21,6 +21,9 @@ The web version of Pay Down Calc was written entirely in JavaScript --just clone
 - Estimated PMI
 
 ## Live Demo Android
+
+Note that this app is no longer being maintained. 
+
 https://play.google.com/store/apps/details?id=com.paydowncalc.app
 
 
